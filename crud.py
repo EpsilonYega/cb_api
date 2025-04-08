@@ -9,5 +9,5 @@ def create_currency_rate(db: Session, rate: CurrencyRateCreate):
     db.refresh(db_rate)
     return db_rate
 
-def get_currency_rates(db: Session):
+def get_currency_rates(db: Session) -> List:
     return db.query(CurrencyRate).all()

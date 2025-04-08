@@ -39,4 +39,5 @@ async def root(db: Session = Depends(get_db)):
     else:
         raise HTTPException(status_code=r.status_code, detail="Ошибка HTTP при запросе к ЦБ РФ")
 
-    return get_currency_rates(db)
+    result = get_currency_rates(db)
+    return result
